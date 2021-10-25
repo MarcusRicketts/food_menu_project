@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/MarcusRicketts/food_menu_project/issues"
   },
-  "homepage": "https://github.com/MarcusRicketts/food_menu_project#readme"
+  "homepage": "https://github.com/MarcusRicketts/food_menu_project#readme",
+  "dependencies": {
+    "mongoose": "^6.0.12"
+  }
 }
