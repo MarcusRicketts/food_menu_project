@@ -1,9 +1,4 @@
-const mongoose = require("mongoose");
+const connectDb = require("./startup/db");
+const connectDB = require("./startup/db");
 
-mongoose
-  .connect(
-    "mongodb+srv://devricks:!QAZ1qaz@cluster0.wki8r.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  )
-  .then(() => console.log("Connected to MongoDB"))
-  .catch((err) => console.log(`Could not connect to MongoDB. ERROR: ${err}`));
+connectDb();
