@@ -1,8 +1,8 @@
-const connectDb = require("./startup/db");
+const connectDB = require("./startup/db");
 const express = require("express");
 const app = express();
 
-connectDb();
+connectDB();
 
 app.use(express.json());
 

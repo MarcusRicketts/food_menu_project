@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const config = require("config");
 
-const connectDb = () => {
+const connectDB = () => {
   mongoose
     .connect(config.get("mongoURI"), {
       useNewUrlParser: true,
@@ -14,4 +14,4 @@ const connectDb = () => {
     });
 };
 
-module.exports = connectDb;
+module.exports = connectDB;
