@@ -5,12 +5,12 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   try {
     const dish = new Dish({
-      name: "Original Cheesecake",
-      description: `The One That Started it All! Our Famous Creamy Cheesecake with a Graham Cracker Crust and Sour Cream Topping.`,
-      category: "Dessert",
-      ingredients: ["sour cream", "cream cheese"],
-      price: 7.99,
-      altprice: 20.99,
+      name: req.body.name,
+      description: req.body.description,
+      category: req.body.category,
+      ingredients: req.body.ingredients,
+      price: req.body.price,
+      altprice: req.body.altprice,
     });
     await dish.save();
 
