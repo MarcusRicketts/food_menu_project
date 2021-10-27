@@ -1,9 +1,12 @@
-const Dish = require("../models/dish");
+const { Dish, validate } = require("../models/dish");
 const express = require("express");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
+    const { error } = validate(req.body);
+    if (error) return res.status(400).send(error);
+
     const dish = new Dish({
       name: req.body.name,
       description: req.body.description,

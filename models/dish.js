@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const Joi = require("joi");
 
 const dishschema = new mongoose.Schema({
   name: {
@@ -35,4 +36,18 @@ const dishschema = new mongoose.Schema({
 
 const Dish = mongoose.model("Dish", dishschema);
 
-module.exports = Dish;
+function validateDish(dish) {
+  const schema = Joi.object({
+    name: Joi.string().min(2).max(255).required(),
+    description: Joi.string().required(),
+    category: Joi.string().min(2).max(255).required(),
+    ingredients: Joi.array().string().min(2).max(255).required(),
+    price: Joi.number().required(),
+    altprice: Joi.number().required(),
+  });
+  return schema.validate(dish);
+}
+
+exports.Dish = Dish;
+exports.validate = validateDish;
+exports.dishschema = dishschema;
