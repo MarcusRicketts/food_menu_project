@@ -1,5 +1,11 @@
 import React from "react";
 
-export const App = () => {
-  return <div></div>;
+const App = () => {
+  return (
+    <div>
+      <h1>This app is running</h1>
+    </div>
+  );
 };
+
+export default App;
