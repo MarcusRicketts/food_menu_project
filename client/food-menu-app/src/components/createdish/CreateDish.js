@@ -35,8 +35,9 @@ function CreateDish() {
     console.log(ingredientsArry);
   };
 
-  const removeIngredient = (e) => {
-    console.log(e.target.name);
+  const removeIngredient = (value) => {
+    const btnValue = value;
+    console.log(btnValue);
     // const filteredItems = array.filter((item) => item !== value);
     // console.log(filteredItems);
     // setIngredientsArry([...ingredientsArry, filteredItems]);
@@ -53,16 +54,22 @@ function CreateDish() {
           <div>
             <Typography variant="caption">Dish's ingredients</Typography>
             {ingredientsArry.map((name, index) => (
-              <button
-                type="button"
-                name={name}
-                className="ingredients-btn"
-                onClick={removeIngredient}
-                key={index}
-              >
-                {name}
-                {/* {<DeleteForeverIcon name={name} className="remove" />} */}
-              </button>
+              <label key={index} value={name}>
+                <Button
+                  onClick={() => {
+                    let newIngArray = [...ingredientsArry];
+                    const index = newIngArray.indexOf(name);
+                    if (index !== -1) {
+                      newIngArray.splice(index, 1);
+                      setIngredientsArry(newIngArray);
+                      console.log(ingredientsArry);
+                    }
+                  }}
+                >
+                  {name}
+                  {<DeleteForeverIcon name={name} className="remove" />}
+                </Button>
+              </label>
             ))}
           </div>
         )}
