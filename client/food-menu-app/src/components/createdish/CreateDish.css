@@ -10,3 +10,10 @@
   color: #ffffff;
   cursor: pointer;
 }
+.form-container {
+  width: 400px;
+  background-color: #ffffff;
+}
+.create-dish-background {
+  background-color: darksalmon;
+}
