@@ -1,10 +1,14 @@
-import "./App.css";
+// import "./App.css";
 import CreateDish from "./components/createdish/CreateDish";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
 function App() {
   return (
-    <div>
-      <CreateDish />
-    </div>
+    <Container>
+      <Grid>
+        <CreateDish />
+      </Grid>
+    </Container>
   );
 }
 
